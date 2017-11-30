@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Result in Round {{ group.round_number }} of {{ Constants.num_rounds }}
+{% endblock %}
+
+{% block content %}
+    <p>
+
+        {% if player.id_in_group == 1 %}
+            You decided to keep <strong>{{ group.kept }}</strong> for yourself.
+        {% else %}
+            Player 1 has made his decision, and you will be told the result at the end of the experiment >.
+        {% endif %}
+
+        {% next_button %}
+    </p>
+    {% include Constants.instructions_template %}
+{% endblock %}

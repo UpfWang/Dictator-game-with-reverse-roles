@@ -1,0 +1,17 @@
+{{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}Your Decision in Round {{ group.round_number }} of {{ Constants.num_rounds }}{% endblock %}
+
+{% block content %}
+<p>
+You are <strong>Player 1</strong>. Now please decide how much you will keep for yourself.
+</p>
+
+{% formfield group.kept %}
+
+{% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}
